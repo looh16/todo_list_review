@@ -2,7 +2,7 @@
 
 # todo-list
 
-> simple HTML list of To Do tasks.
+>This is a simple List of To Do tasks aplication. can add, edit and delete tasks. All tasks are saved in localStorage.
 
 
 ## Built With
@@ -19,12 +19,16 @@ To get a local copy up and running follow these simple example steps.
 Any kind of browser. 
 
 ### Setup:
-    1. Clone the repository (git clone https://github.com/Ney2/AwesomeBook.git)
+    1. Clone the repository (git clone https://github.com/looh16/todo-list)
     2. Then open the folder in your local environment 
     3. In terminal console run:
        - npm install
        - npm run dev
        - npm start
+       
+### Live Demo:
+    https://looh16.github.io/todo_list.github.io/
+    
 
 👤 **Author**
 

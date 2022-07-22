@@ -1,5 +1,8 @@
 // eslint-disable-next-line
 import { updateToFalse, updateToTrue } from './update-status';
+import { editTodoTask } from './edit-todo';
+// eslint-disable-next-line
+import { deleteTodo } from './delete-todo';
 
 export const getAllTodos = () => {
   const todos = JSON.parse(localStorage.getItem('todos'));
@@ -60,18 +63,7 @@ export const renderTodo = () => {
   }
 
   deleteBtn.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      const id = parseInt(event.target.getAttribute('data-index'), 10);
-      let localStoragetodos = getAllTodos();
-      localStoragetodos = localStoragetodos.filter((todo) => todo.index !== id);
-      // eslint-disable-next-line
-        for (let id = 0; id < localStoragetodos.length; id++) {
-        localStoragetodos[id].index = id;
-      }
-      localStorage.setItem('todos', JSON.stringify(localStoragetodos));
-      // eslint-disable-next-line
-        location.reload();
-    });
+    deleteTodo(button);
   });
 
   dropdownBtn.forEach((dropBtn) => {
@@ -87,8 +79,8 @@ export const renderTodo = () => {
     const localStoragetodos = JSON.parse(localStorage.getItem('todos'));
     const id = parseInt(e.target.dataset.editid, 10);
     const index = localStoragetodos.findIndex((todo) => todo.index === id);
-    localStoragetodos[index].description = e.target.value;
-    localStorage.setItem('todos', JSON.stringify(localStoragetodos));
+    const description = e.target.value;
+    editTodoTask(index, description);
   }
 
   textLabel.forEach((text) => {
